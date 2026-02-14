@@ -1,0 +1,62 @@
+/* src/components/Portal/PComics.module.css */
+
+.pcomicsContainer {
+  /* Thêm các style cho container nếu cần, ví dụ: */
+   text-align: center; 
+}
+
+.pcomicsList {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  justify-content: center;
+  /* Căn giữa các item trên dòng */
+}
+
+.pcomicsItem {
+  width: 200px;
+  margin: 10px;
+  text-align: center;
+  position: relative;
+  /* Cần để định vị tuyệt đối cho title */
+}
+
+.comicLink {
+  text-decoration: none;
+  color: #333;
+  display: block;
+  /* width: 100%;  // Thử thêm dòng này nếu cần full width link*/
+  /* height: 100%; //  Thử thêm dòng này nếu cần full height link*/
+}
+
+.comicCover {
+  width: 100%;
+  aspect-ratio: 13/19;
+  object-fit: cover;
+  border-radius: 5px;
+  transition: transform 0.3s ease;
+  /* Giữ lại transition */
+}
+
+.comicCover:hover {
+  transform: scale(1.05);
+  /* Giữ lại hiệu ứng hover phóng to */
+}
+
+.comicTitle {
+  font-size: 16px;
+  margin-top: 5px;
+  text-align: center;
+  color: #333;
+  opacity: 0;
+  /* Ẩn tiêu đề mặc định */
+  transition: opacity 0.3s ease;
+  /* Thêm transition cho hiệu ứng mờ dần */
+}
+
+.pcomicsItem:hover .comicTitle {
+  opacity: 1;
+  /* Hiển thị tiêu đề khi hover vào item */
+}

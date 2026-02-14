@@ -1,0 +1,363 @@
+/* src/components/ReadStandaloneChapter/ReadStandaloneChapter.module.css */
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  background: #f1f3f4; /* nền xám nhạt */
+  color: #333;
+  box-sizing: border-box;
+}
+.dark {
+  background: #121212;
+  color: #e0e0e0;
+}
+
+.overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex; justify-content: center; align-items: center;
+  z-index: 1000;
+}
+.modal {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+}
+.input {
+  width: 100%;
+  padding: 8px;
+  margin: 8px 0;
+  font-size: 1rem;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+
+.topNav {
+  display: flex;
+  justify-content: center;    /* căn giữa ngang */
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: inherit;
+
+  max-width: 800px;
+  margin: 0 auto;             /* căn giữa container */
+  flex-wrap: wrap;
+}
+
+
+.chapterSelect {
+  max-width: 150px;
+  padding: 6px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #fff;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  overflow: visible;
+  text-overflow: ellipsis;
+}
+.dark .chapterSelect {
+  background: #333;
+  color: #e0e0e0;
+  border-color: #555;
+}
+
+.navBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: #fff;
+  color: inherit;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.navBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.navBtn:hover:not(:disabled) {
+  background: #e0e0e0;
+}
+.dark .navBtn {
+  background: #333;
+}
+.dark .navBtn:hover:not(:disabled) {
+  background: #444;
+}
+
+/* Header */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  max-width: 800px;
+  margin: 16px auto;
+  padding: 0 16px;
+  background: inherit;
+  text-align: center;
+}
+
+/* Adjust backLink and title to align center horizontally */
+.backLink {
+  margin: 0;
+  padding: 0;
+  font-size: 1rem;
+}
+
+.title {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.backLink:hover {
+  color: #0051a8;
+}
+.dark .backLink {
+  color: #66aaff;
+}
+
+/* Title */
+.title {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* Pages */
+.pagesContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 0 16px;
+}
+.pagesContainer img {
+  max-width: 800px;
+  margin: auto;
+}
+.pageImage {
+  width: 100%;
+  border-radius: 4px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+.noPages {
+  text-align: center;
+  margin: 50px 0;
+  font-size: 1.1rem;
+}
+
+/* Loading/Error */
+.loading {
+  text-align: center;
+  margin: 50px 0;
+  font-size: 1.1rem;
+  color: #555;
+}
+.dark .loading {
+  color: #aaa;
+}
+
+.carouselContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 100vw;
+  overflow: visible;
+  margin: auto;
+  position: relative;
+  padding: 0 8px;
+  box-sizing: border-box;
+}
+
+.carouselImage {
+  max-width: 100%;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.carouselButtonsWrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 8px;
+  gap: 12px;
+}
+
+.sideBtn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  font-size: 1.5rem;
+  padding: 10px;
+  border-radius: 50%;
+  z-index: 10;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.sideBtn:hover:not(:disabled) {
+  background: rgba(0, 0, 0, 0.7);
+}
+.sideBtn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+.leftBtn {
+  left: 5%;
+}
+.rightBtn {
+  right: 5%;
+}
+
+.circleBtn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  border: none;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.circleBtn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+
+.popupOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10000; /* cao nhất có thể */
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popupBox {
+  background: #fff;
+  color: #111;
+  border-radius: 8px;
+  padding: 24px;
+  max-width: 90%;
+  width: 400px;
+  text-align: center;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.25);
+  z-index: 10001;
+}
+
+.popupButtons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 16px;
+}
+.popupBox {
+  background: white;
+  color: black;
+}
+
+.optionBtn {
+  padding: 12px 16px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  background-color: #f0f0f0;
+    color: black;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.optionBtn:hover {
+  background-color: #e0e0e0;
+}
+
+.confirmText {
+  margin: 10px 0;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.purchasedLabel {
+  font-size: 0.85rem; /* hoặc 0.75rem tùy ý */
+  color: #576c63; /* xám nhạt */
+  margin-left: 8px;
+}
+
+.giftButton {
+  margin-left: 10px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  color: #e67e22; /* ví dụ màu cam nổi bật */
+}
+
+.navBtn.active {
+  background: #2e89ff;
+  color: white;
+}
+
+.mobileBottomButtons {
+  display: none;
+}
+
+/* Trên màn hình nhỏ: ẩn nút trái/phải nếu muốn */
+@media (max-width: 768px) {
+  .sideBtn {
+    display: none;
+  }
+  .mobileBottomButtons {
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    bottom: 10px;
+    left: 0;
+    width: 100%;
+    padding: 0 20px;
+    z-index: 20;
+  }
+
+  .mobileBottomButtons button {
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 1.5rem;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  .mobileBottomButtons button:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+  }
+
+}

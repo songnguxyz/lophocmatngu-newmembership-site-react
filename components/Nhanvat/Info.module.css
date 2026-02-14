@@ -1,0 +1,99 @@
+/* Character Info section for NhanvatInfo.jsx */
+
+.infoBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  text-align: left;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.nameRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  justify-content: center;
+}
+
+.name {
+  font-size: 2.2rem;
+  font-weight: bold;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  white-space: nowrap;
+}
+
+.genderIcon {
+  font-size: 1.2rem;
+
+}
+
+.personalInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 0.95rem;
+  margin-bottom: 6px;
+  width: 100%;
+  align-items: flex-start;
+}
+
+.infoItem {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  white-space: nowrap;
+  justify-content: flex-start;
+}
+
+.infoItem strong {
+  display: inline-block;
+  width: 80px;
+}
+
+.fullDescription {
+  flex: 1;
+  padding: 0;
+  margin: 0;
+  border-radius: 8px;
+  /* Trả về normal để dùng margin của <p> */
+  white-space: normal;
+  font-size: 0.95rem;
+  /* Bạn có thể giảm nhẹ line-height nếu muốn */
+  line-height: 1.4;      
+  text-align: left;
+  word-break: break-word;
+}
+
+/* Giảm margin bottom của <p> cho gần nhau hơn */
+.fullDescription p {
+  margin: 0 0 0.1em;  /* trước đây mặc định có thể là 1em */
+}
+
+/* Cũng đảm bảo <br> không tạo quá nhiều khoảng trắng */
+.fullDescription br {
+  display: block;
+  content: "";
+  margin: 0;           /* xóa margin mặc định */
+  line-height: 0.5;    /* dòng gọn hơn */
+}
+
+
+/* Responsive trên mobile, chỉ giảm font/icon để vừa khung */
+@media (max-width: 768px) {
+  .name {
+    font-size: 1.8rem;
+  }
+
+  .genderIcon {
+    font-size: 1.5rem;
+  }
+
+  .personalInfo {
+    gap: 4px;
+  }
+}

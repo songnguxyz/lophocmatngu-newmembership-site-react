@@ -1,0 +1,118 @@
+/* src/components/Admin/Nav/ManagePages.module.css \*/
+
+.container {
+padding: 16px;
+background-color: #fafafa;
+border-radius: 8px;
+box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-bottom: 12px;
+}
+.headerActions > button {
+margin-left: 8px;
+}
+
+.addBtn {
+background-color: #4caf50;
+color: #fff;
+border: none;
+padding: 6px 12px;
+border-radius: 4px;
+cursor: pointer;
+}
+.initBtn {
+background-color: #ff9800;
+color: #fff;
+border: none;
+padding: 6px 12px;
+border-radius: 4px;
+cursor: pointer;
+}
+
+.saveBtn, .cancelBtn {
+border: none;
+padding: 6px 10px;
+border-radius: 4px;
+cursor: pointer;
+font-weight: bold;
+}
+.saveBtn {
+background-color: #2196f3;
+color: #fff;
+}
+.cancelBtn {
+background-color: #f44336;
+color: #fff;
+}
+
+.formRow {
+display: flex;
+flex-wrap: wrap;
+gap: 8px;
+margin-bottom: 12px;
+}
+.formRow input,
+.formRow select {
+padding: 6px;
+border: 1px solid #ccc;
+border-radius: 4px;
+flex: 1;
+min-width: 60px;
+}
+
+.list {
+list-style: none;
+padding: 0;
+margin: 0;
+}
+.listItem {
+display: flex;
+align-items: center;
+gap: 12px;
+padding: 8px;
+margin-bottom: 8px;             /* thêm khoảng cách giữa các item */
+border: 1px solid #e0e0e0;     /* viền nhẹ giúp phân biệt */
+border-radius: 4px;            /* bo góc */
+background-color: #fff;        /* nền trắng mặc định */
+}
+.listItem.disabled {
+background-color: #f0f0f0;     /* nền xám nhạt cho item inactive \*/
+color: #777;
+}
+
+.label { flex: 2; font-weight: 500; }
+.url { flex: 3; color: #555; word-break: break-all; }
+.order, .visible { width: 100px; text-align: center; color: #333; }
+
+.actions {
+display: flex;
+gap: 8px;
+}
+.editBtn {
+background-color: #ffc107;
+color: #fff;
+border: none;
+padding: 4px 8px;
+border-radius: 4px;
+cursor: pointer;
+font-size: 0.9rem;
+}
+.deleteBtn {
+background-color: transparent;
+border: none;
+cursor: pointer;
+color: #f44336;
+font-size: 1.1rem;
+}
+
+.spinner, .error {
+text-align: center;
+padding: 20px;
+font-size: 1rem;
+color: #777;
+}

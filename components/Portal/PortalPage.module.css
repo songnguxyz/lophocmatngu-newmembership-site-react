@@ -1,0 +1,47 @@
+/* src/components/Portal/PortalPage.module.css */
+
+.portalPageContainer {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  /* 1fr cho nội dung chính, auto cho slider */
+  max-width: 1600px;
+  margin: 0 auto;
+  /* Căn giữa container */
+  padding: 20px;
+  box-sizing: border-box;
+  gap: 20px;
+  /* Khoảng cách giữa các cột */
+}
+
+/* Style cho vùng nội dung chính */
+.portalContent {
+  /* flex: 1; Xóa dòng này */
+  /* width: 100%; Xóa dòng này */
+  display: flex;
+  /* Để căn giữa nội dung bên trong */
+  flex-direction: column;
+  /* Để các section xếp chồng lên nhau */
+  align-items: center;
+  /* Căn giữa các section theo chiều ngang */
+}
+
+
+.articlesTitle {
+  margin-bottom: 20px;
+  /* padding-left: 20px; Xóa dòng này nếu không cần thiết */
+  font-size: 1.5em;
+  font-weight: bold;
+  width: 100%;
+  /* Để title chiếm toàn bộ chiều rộng */
+  text-align: left;
+  /* Căn trái tiêu đề */
+}
+/* Các style cho responsive */
+@media (max-width: 768px) {
+  .portalPageContainer {
+    grid-template-columns: 1fr;
+    /* Chuyển sang 1 cột trên màn hình nhỏ */
+    align-items: center;
+    /* Căn giữa các phần tử */
+  }
+}

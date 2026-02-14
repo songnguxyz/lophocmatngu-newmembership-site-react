@@ -1,0 +1,358 @@
+/* src/components/Item/Item.module.css */
+
+/* Overall container */
+.items-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Item List (Summary View) */
+.item-list {
+    width: 100%;
+    max-width: 800px;
+    margin-bottom: 20px;
+}
+
+/* Individual Item Summary */
+.item-item {
+    display: flex;
+    align-items: flex-start;
+    /* Căn ảnh và nội dung lên trên */
+    padding: 10px 0;
+    /* Loại bỏ padding bên */
+    border-bottom: 1px solid #eee;
+    /* Thay bằng gạch ngang */
+}
+
+/* FB Image in Summary */
+.fb-image-container {
+    position: relative;
+    /* Tạo context cho absolute positioning */
+    width: 290px;
+    /* Giới hạn chiều rộng */
+    height: 150px;
+    /* Giới hạn chiều cao */
+    overflow: hidden;
+    /* Ẩn phần zoom tràn ra ngoài */
+    border-radius: 5px;
+    margin-right: 15px;
+}
+
+.fb-image {
+    width: 100%;
+    /* Để ảnh chiếm toàn bộ container */
+    height: 100%;
+    /* Để ảnh chiếm toàn bộ container */
+    object-fit: cover;
+    /* Cắt ảnh để vừa với container */
+    object-position: center;
+    /* Căn giữa ảnh trong container */
+    transition: transform 0.3s ease;
+    /* Thêm hiệu ứng chuyển động */
+}
+
+/* Summary Content (Title + Summary Text) */
+.summary-content {
+    flex: 1;
+    text-align: left;
+}
+
+
+
+/* Item Link (Title) */
+.item-link {
+    text-decoration: none;
+    color: #333;
+    display: block;
+    /* Để title chiếm toàn bộ chiều rộng */
+}
+
+.item-link h2 {
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-size: 1.2em;
+    /* Điều chỉnh kích thước tiêu đề */
+}
+
+.summary-content p {
+    color: #555;
+    margin-bottom: 0;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    /* Giới hạn 3 dòng */
+    line-clamp: 3;
+    /* Thêm thuộc tính này */
+    -webkit-box-orient: vertical;
+}
+
+/* Item Detail View Styles (Existing Styles) */
+.item-detail-container {
+    width: 100%;
+    max-width: 800px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.item-detail-container p,
+.item-detail-container span,
+.item-detail-container div {
+    text-align: justify;
+    text-align-last: left;
+}
+
+.item-detail-container h2 {
+    margin-top: 0;
+}
+
+.item-fb-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.scroll-to-top-button {
+    position: fixed;
+    /* Stay in place when scrolling */
+    bottom: 20px;
+    /* Distance from the bottom */
+    right: 20px;
+    /* Distance from the right */
+    background-color: #007bff;
+    /* Button color */
+    color: white;
+    /* Text color */
+    padding: 10px 15px;
+    /* Padding around text */
+    border: none;
+    /* Remove border */
+    border-radius: 5px;
+    /* Rounded corners */
+    cursor: pointer;
+    /* Change cursor on hover */
+    opacity: 0.7;
+    /* Make slightly transparent */
+    transition: opacity 0.3s ease;
+    /* Smooth transition for opacity */
+    z-index: 100;
+    /* Ensure it stays on top of other elements */
+}
+
+.scroll-to-top-button:hover {
+    opacity: 1;
+    /* Fully visible on hover */
+}
+
+/* Gift Image Styling */
+.gift-image {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.gift-image img {
+    max-width: 200px;
+    /* Adjust the size as needed */
+    height: auto;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+/* General Styling for Item Details */
+.item-title h1 {
+    color: #333;
+}
+
+.item-summary {
+    margin-bottom: 20px;
+}
+
+.cover-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.summary {
+    color: #555;
+    line-height: 1.6;
+}
+
+.link-buttons {
+    margin-top: 10px;
+}
+
+.link-buttons span {
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.link-buttons a button {
+    padding: 8px 12px;
+    margin-left: 5px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.link-buttons a button:hover {
+    background-color: #0056b3;
+}
+
+.item-content {
+    margin-top: 20px;
+    color: #444;
+    line-height: 1.6;
+}
+
+.textJustify {
+    text-align: justify;
+    text-align-last: left;
+    
+}
+
+/* Các items khác */
+.other-items-container .item-item {
+    display: flex;
+    align-items: flex-start;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.other-items-container .fb-image-container {
+    position: relative;
+    width: auto;
+    height: 140px;
+    overflow: hidden;
+    border-radius: 5px;
+    margin-right: 15px;
+}
+
+.other-items-container .fb-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+/* Thêm các style sau vào Item.module.css */
+
+/* Detail Summary Container */
+.item-summary-container-detail {
+    display: flex;
+    /* Dùng flexbox để chia cột */
+    margin-bottom: 20px;
+    /*border: 1px solid #ddd;  Tạo khung cho khối */
+    border-radius: 8px;
+    overflow: hidden;
+    /* Ẩn các phần tử tràn */
+}
+
+/*dùng code mới này*/
+.item-summary-content {
+    /* border: 1px solid #ccc;*/
+    display: flex;
+}
+
+/* Cover Image in Detail */
+.cover-image-detail {
+    width: 40%;
+    /* Chiếm 40% chiều rộng */
+    padding: 10px;
+}
+
+.cover-image-detail img {
+    width: 100%;
+    height: auto;
+    /*aspect-ratio: 3 / 2;*/
+    object-fit: cover;
+    /* Đảm bảo ảnh lấp đầy khung */
+    border-radius: 5px;
+}
+
+/* Summary and Buttons Container */
+.summary-and-buttons {
+    width: 60%;
+    /* Chiếm 60% chiều rộng */
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    /* Xếp dọc */
+}
+
+/* Summary Text in Detail */
+.summary-detail {
+    flex: 1;
+    /* Chiếm phần còn lại của không gian */
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Divider Line */
+.summary-divider {
+    border: none;
+    /* Loại bỏ border mặc định */
+    border-top: 1px solid #eee;
+    /* Gạch xám mờ */
+    margin: 10px 0;
+}
+
+/* Link Buttons in Detail */
+.link-buttons-detail {
+    text-align: left;
+    /* Canh trái */
+    margin-top: auto;
+    /* Đẩy xuống cuối */
+}
+
+.link-buttons-detail span {
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.link-buttons-detail a button {
+    padding: 8px 12px;
+    margin-left: 5px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.link-buttons-detail a button:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive layout for smaller screens */
+@media (max-width: 768px) {
+    .item-item {
+        flex-direction: column;
+        /* Stack ảnh và nội dung */
+        align-items: center;
+        /* Căn giữa trên màn hình nhỏ */
+        text-align: center;
+        /* Căn giữa chữ */
+    }
+
+    .fb-image {
+        width: 100%;
+        /* Ảnh chiếm toàn bộ chiều rộng */
+        height: auto;
+        margin-right: 0;
+        /* Loại bỏ margin */
+        margin-bottom: 10px;
+    }
+
+    .item-link h2 {
+        font-size: 1.1em;
+        /* Nhỏ hơn một chút trên điện thoại */
+    }
+}

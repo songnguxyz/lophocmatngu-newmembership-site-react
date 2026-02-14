@@ -1,0 +1,36 @@
+/* src/components/Nhanvat/NhanvatStats.module.css */
+.statsContainer {
+    width: 100%;
+    /* Dùng aspect-ratio để tạo khung vuông nếu hỗ trợ */
+    aspect-ratio: 1 / 1;
+    position: relative;
+    overflow: visible;
+    /* Đặt min-height để đảm bảo chiều cao > 0 trên mobile */
+    min-height: 180px;
+    /* Fallback nếu browser không hỗ trợ aspect-ratio */
+    height: auto;
+  }
+  
+  /* ResponsiveContainer wrapper: chiếm toàn bộ vùng của statsContainer */
+  .statsContainer > div {
+    position: absolute !important;
+    width: 100%;
+    inset: 0 !important;
+  }
+  
+  /* Cho phép các SVG và label không bị cắt */
+  .statsContainer svg,
+  .statsContainer svg g {
+    overflow: visible !important;
+  }
+  .statsContainer .recharts-polar-angle-axis tspan {
+    white-space: nowrap;
+  }
+  
+  /* Mobile-specific: tăng min-height trên màn nhỏ */
+  @media (max-width: 600px) {
+    .statsContainer {
+      min-height: 150px;
+    }
+  }
+  

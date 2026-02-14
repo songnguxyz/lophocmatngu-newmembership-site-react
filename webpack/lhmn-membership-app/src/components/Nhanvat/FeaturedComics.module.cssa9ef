@@ -1,0 +1,2 @@
+// extracted by mini-css-extract-plugin
+export default {"container":"FeaturedComics_container__zTDkK","header":"FeaturedComics_header__Xvb6L","navButtons":"FeaturedComics_navButtons__uwjRN","sectionHeading":"FeaturedComics_sectionHeading__+yDe-","navBtn":"FeaturedComics_navBtn__iQs-z","carousel":"FeaturedComics_carousel__+v5Ba","card":"FeaturedComics_card__dbQI2","image":"FeaturedComics_image__ekIoX","navBottom":"FeaturedComics_navBottom__kE8Tf","pageIndicator":"FeaturedComics_pageIndicator__nS4Zx","tooltip":"FeaturedComics_tooltip__hqsxM"};

@@ -1,0 +1,129 @@
+/* src/components/members/MemberProfile.module.css */
+.memberProfileContainer {
+  max-width: 1600px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+.profileHeader {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.profileImage {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 20px;
+}
+
+/* Character List Section */
+/* Thay thế các style hiện có bằng các style sau */
+.characterList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  /* Căn trái các phần tử */
+  margin-bottom: 20px;
+}
+
+/* Giữ đúng kích thước và hình dạng của avatar */
+.characterItem {
+  width: 100px;
+  /* Điều chỉnh kích thước theo ý muốn */
+  height: 100px;
+  margin: 10px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  border-radius: 10px;
+}
+
+.characterItem:hover {
+  transform: scale(1.1);
+  opacity: 0.8;
+}
+
+.characterItem.selected {
+  opacity: 1;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.characterAvatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.comicList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.comicItem {
+  list-style: none;
+}
+.comicCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 140px;
+  background: var(--card-bg);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  padding: 8px;
+  text-decoration: none;
+}
+.comicCover {
+  width: 100%;
+  border-radius: 0px;
+}
+.comicTitle {
+  margin-top: 8px;
+  font-size: 0.9rem;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+/* Comic Link */
+.chapterList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.chapterItem {
+  list-style: none;
+}
+.chapterCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 140px;
+  background: var(--card-bg);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  padding: 8px;
+  text-decoration: none;
+}
+.chapterCover {
+  width: 100%;
+  border-radius: 0px;
+}
+.chapterTitle {
+  margin-top: 8px;
+  font-size: 0.9rem;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

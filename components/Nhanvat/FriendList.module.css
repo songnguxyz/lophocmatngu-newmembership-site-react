@@ -1,0 +1,156 @@
+/* File: FriendList.module.css */
+
+.friendListWrapper {
+  width: 100%;
+  max-width: 100%;
+  position: relative;
+  overflow: visible;
+  box-sizing: border-box;
+  padding: 6px;
+
+}
+
+.friendTitle {
+  font-size: 1.2em;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+
+.carouselControls {
+  display: flex;
+  gap: 0;
+}
+
+.carouselBtn {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #fff;
+  font-size: 1.2rem;
+  transition: background 0.2s, opacity 0.2s;
+}
+.carouselBtn:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.friendRow {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 16px;
+  padding: 0;
+  margin: 0;
+}
+
+.friendCard {
+  position: relative;
+  width: 120px;
+  cursor: pointer;
+  text-align: center;
+  transition: transform 0.2s;
+  overflow: visible;
+  flex: 0 0 auto;
+
+}
+.friendCard:hover {
+  transform: scale(1.05);
+}
+.friendCard:hover .friendAvatarWrapper {
+  border-color: white;
+  box-shadow: 0 0 8px rgba(255,255,255,0.4);
+}
+
+.friendAvatarWrapper {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  overflow: hidden;
+  border-radius: 10px;
+  border: 2px solid transparent;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+  margin: 0 auto 8px;
+}
+.friendAvatarWrapper img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+}
+
+.commentAvatar {
+  opacity: 0;
+  z-index: 2;
+}
+.commentAvatar.show {
+  opacity: 1;
+}
+
+.friendAvatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.friendName {
+  margin-top: 6px;
+  font-size: 1rem;
+  font-weight: bold;
+
+}
+
+.friendBubble {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 1);
+  padding: 8px 12px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  color: #fff;
+  max-width: min(240px, 90vw);
+  min-width: 160px;
+  white-space: pre-wrap;
+  line-height: 1.5;
+  text-align: left;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  z-index: 20;
+  box-sizing: border-box;
+}
+
+.bubbleArrow {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 6px;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 1) transparent transparent transparent;
+}
+
+@media (max-width: 768px) {
+  .friendCard {
+    width: 70px;
+    z-index: 100;
+  }
+  .friendAvatarWrapper {
+    width: 70px;
+    height: 70px;
+  }
+  .friendRow {
+    justify-content:center;
+
+  }
+}

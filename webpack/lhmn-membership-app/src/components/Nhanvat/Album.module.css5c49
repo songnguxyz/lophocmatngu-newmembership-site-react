@@ -1,0 +1,2 @@
+// extracted by mini-css-extract-plugin
+export default {"albumHeader":"Album_albumHeader__viQq4","albumTitle":"Album_albumTitle__YOUV3","albumNavButtons":"Album_albumNavButtons__a+0rY","albumNavBtn":"Album_albumNavBtn__lZbCF","albumThumbnailContainer":"Album_albumThumbnailContainer__Pt4id","albumBigImage":"Album_albumBigImage__S43dQ","albumThumbRow":"Album_albumThumbRow__7rf2q","albumThumbItem":"Album_albumThumbItem__lBkDi","albumImage":"Album_albumImage__xd1Ib","albumPlaceholder":"Album_albumPlaceholder__dpG0H"};

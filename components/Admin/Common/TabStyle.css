@@ -1,0 +1,27 @@
+.tabs-container {
+  display: flex;
+  border-bottom: 2px solid #ccc;
+  overflow-x: auto;
+  margin-bottom: 10px;
+}
+
+.tab-item {
+  padding: 10px 20px;
+  background: #f5f5f5;
+  border-radius: 10px 10px 0 0;
+  margin-right: 5px;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.tab-item:hover {
+  background: #e0e0e0;
+}
+
+.tab-item.active {
+  background: #ffffff;
+  color: #007bff;
+  border-bottom: 2px solid white;
+}

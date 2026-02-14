@@ -1,0 +1,108 @@
+/* src/components/AdminDashboard.css */
+.dashboard-container {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f9fafb;
+  font-family: "Inter", sans-serif;
+  font-weight: normal;
+}
+
+.sidebar {
+  width: 240px;
+  background: #1e293b;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.sidebar h2 {
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.menu-button {
+  background: none;
+  border: none;
+  color: #cbd5e1;
+  text-align: left;
+  padding: 10px 15px;
+  font-size: 1rem;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: background 0.3s, color 0.3s;
+  cursor: pointer;
+}
+
+.menu-button:hover {
+  background: #334155;
+  color: #fff;
+}
+
+.menu-button.active {
+  background: #3b82f6;
+  color: #fff;
+}
+
+.content {
+  flex: 1;
+  padding: 30px;
+}
+
+.breadcrumb {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #1e293b;
+}
+
+.content-wrapper {
+  background: #ffffff;
+  color: #000;
+  font-size: medium;
+  text-align: start;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  min-height: 400px;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .dashboard-container {
+    flex-direction: column;
+  }
+  .sidebar {
+    width: 100%;
+    flex-direction: row;
+    overflow-x: auto;
+  }
+  .menu {
+    flex-direction: row;
+    gap: 8px;
+  }
+  .menu-button {
+    flex-shrink: 0;
+  }
+}

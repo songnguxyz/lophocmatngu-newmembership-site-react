@@ -1,0 +1,61 @@
+/* MobileCharacterCarousel.module.css */
+.mobileCarouselWrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.mobilePoster {
+  opacity: 0;
+  transform: scale(0.98);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  will-change: opacity, transform;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.mobilePoster.loaded {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Buttons hidden by default, only show on mobile */
+.mobileButtonRow {
+  display: none;
+  margin-top: 12px;
+  gap: 16px;
+}
+
+/* Chevron buttons style */
+.mobileChevronInline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: rgba(0, 0, 0, 0.4);
+  border: none;
+  color: #fff;
+  font-size: 1.2rem;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.2s;
+  padding: 0;
+}
+
+.mobileChevronInline:hover {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+/* Media query: show buttons on screens <= 768px */
+@media (max-width: 768px) {
+  .mobileButtonRow {
+    display: flex;
+  }
+}

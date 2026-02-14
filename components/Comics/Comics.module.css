@@ -1,0 +1,49 @@
+/* src/components/Comics/Comics.module.css */
+
+.wrapper {
+  width: 100%;
+  min-height: 100vh;
+  padding-top: 0;
+  background: #f1f3f4; /* nền xám nhạt toàn khối */
+  box-sizing: border-box;
+}
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  gap: 2px;
+  padding: 8px 16px 0; /* padding-top + sides, bỏ padding-bottom */
+  background: #f1f3f4; /* nền xám nhạt đồng bộ */
+  overflow-x: auto;
+  margin-bottom: 0;
+}
+
+.tab {
+  padding: 12px 24px;
+  margin-bottom: 0;
+  font-weight: 600;
+  color: #555;
+  background: #f1f3f4; /* tab không active cũng xám nhạt */
+  border: none;
+  border-radius: 12px; /* bo tròn 4 góc mặc định */
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background-color 0.2s, color 0.2s, border-radius 0.3s ease;
+}
+
+.tab:not(.active):hover {
+  background: #e5e7eb; /* hover vẫn xám nhạt đậm hơn */
+}
+
+.tab.active {
+  background: #fff; /* chỉ tab active mới trắng để nổi bật */
+  color: #007bff;
+  border-radius: 12px 12px 0 0;
+  box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.content {
+  margin-top: 0;
+  padding-top: 0;
+  background: transparent; /* nội dung dưới trong suốt, hiển thị nền xám của wrapper */
+}

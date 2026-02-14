@@ -1,0 +1,156 @@
+.socialButtons {
+  display: inline-flex;
+  flex-wrap: nowrap;
+  position: relative;
+  z-index: 1;
+  gap: 8px;
+  overflow: visible;
+}
+
+.buttonWrapper {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: stretch;
+}
+
+/* Tooltip nội dung (nằm trên nút) */
+.buttonWrapper[data-tooltip]::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: calc(100% + 11px); /* thêm khoảng cách để mũi tên chèn vào */
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.85);
+  color: #fff;
+  padding: 6px 10px;
+  font-size: 0.75rem;
+  border-radius: 6px;
+  white-space: normal;
+  max-width: 160px;
+  text-align: center;
+  opacity: 0;
+  pointer-events: auto;
+  transition: opacity 0.2s ease;
+  z-index: 30; /* cao hơn mũi tên */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  line-height: 1.2;
+}
+
+
+.buttonWrapper[data-tooltip]::before {
+  content: "";
+  position: absolute;
+  bottom: calc(100%); /* thấp hơn bubble */
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 6px;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.85) transparent transparent transparent;
+  opacity: 0;
+  pointer-events: auto;
+  transition: opacity 0.2s ease;
+  z-index: 20; /* thấp hơn bubble để nằm dưới */
+}
+
+
+.buttonWrapper:hover::after,
+.buttonWrapper:hover::before {
+  opacity: 1;
+}
+
+
+/* Tooltip lệch trái nếu sát mép trái */
+.leftEdge[data-tooltip]::after {
+  left: 8px;
+  transform: none;
+}
+.leftEdge[data-tooltip]::before {
+  left: 16px;
+  transform: none;
+}
+
+/* Nút icon tròn */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  border: none;
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  position: relative;
+  border-radius: 50%;
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  aspect-ratio: 1 / 1;
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+
+.textButton {
+  padding: 10px 14px;
+  width: auto;
+  height: auto;
+  border-radius: 24px;
+  aspect-ratio: auto;
+}
+
+.button:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.1);
+}
+
+.active {
+  background: white !important;
+  color: #4f46e5 !important;
+}
+
+.button span {
+  display: inline-block;
+  margin-left: 8px;
+}
+
+.favoriteButton {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease, transform 0.2s ease;
+  border: none;
+  cursor: pointer;
+  aspect-ratio: 1 / 1;
+  box-sizing: border-box;
+}
+
+.favoriteButton:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.1);
+}
+
+.posterSection .socialButtonsOverlay {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .socialButtons {
+    justify-content: center;
+    gap: 6px;
+  }
+
+  .button {
+    width: 38px;
+    height: 38px;
+    font-size: 0.85rem;
+  }
+}

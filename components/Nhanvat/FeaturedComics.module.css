@@ -1,0 +1,107 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* HEADER */
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+  position: relative;
+  min-height: 30px;             /* cố định chiều cao header */
+}
+
+/* Luôn reserve space cho nav buttons */
+.navButtons {
+  position: absolute;
+  right: 0;
+  display: flex;
+  gap: 0px;
+}
+
+/* Vị trí title */
+.sectionHeading {
+  font-size: 1.2em;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 10px;
+}
+
+/* Nav button style */
+.navBtn {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #fff;
+  font-size: 1.2rem;
+  transition: background 0.2s, opacity 0.2s;
+}
+.navBtn:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.4);
+}
+.navBtn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+/* CAROUSEL */
+.carousel {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+  justify-content: center;
+  overflow: visible;
+}
+
+
+.card {
+  flex: 0 0 auto;             /* Không co giãn */
+  width: 45%;                 /* Chiều rộng cố định mỗi card, có thể chỉnh */
+  max-width: 300px;           /* Giới hạn tối đa để không bị quá lớn */
+  aspect-ratio: 2/3;
+  border-radius: 12px;
+  transition: transform 0.2s ease;
+  overflow: visible;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 12px;
+}
+
+/* NAV BOTTOM nếu không có title */
+.navBottom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 10px;
+  gap: 12px;
+}
+.pageIndicator {
+  color: white;
+  font-size: 0.9rem;
+}
+
+/* Tooltip luôn trên cùng */
+.tooltip {
+  z-index: 2;
+}

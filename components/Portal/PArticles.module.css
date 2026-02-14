@@ -1,0 +1,245 @@
+/* src/components/Portal/PArticles.module.css */
+
+/* Cài đặt kích thước hình ảnh (có thể thay đổi) */
+:root {
+  --main-article-image-height: 300px;
+  --middle-article-image-height: 150px;
+  --side-article-image-height: 100px;
+  --section-gap: 30px;
+  /* Khoảng cách giữa các phần */
+
+  /* Kích thước vùng (có thể điều chỉnh) */
+  --main-article-width: 43%;
+  --middle-articles-width: 25%;
+  --side-articles-width: 32%;
+
+  /* Kích thước chữ (có thể điều chỉnh) */
+  --main-article-title-size: 1.6em;
+  --middle-article-title-size: 1em;
+  --side-article-title-size: 0.9em;
+}
+
+.articlesSection {
+  position: relative;
+  /* Để định vị các phần tử giả */
+  padding: 20px 0;
+  /* Khoảng cách trên và dưới */
+  margin-bottom: 30px;
+  /* Thêm khoảng cách dưới cùng */
+}
+
+.articlesTitle {
+  /*text-align: center;*/
+  /* Loại bỏ căn giữa */
+  margin-bottom: 20px;
+  padding-left: 20px;
+  /* Thêm khoảng cách bên trái */
+  font-size: 1.5em;
+  /* Điều chỉnh kích thước chữ */
+  font-weight: bold;
+  /* Chữ đậm */
+}
+
+.articlesContainer {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+  /* Sử dụng margin thay vì gap */
+  margin-left: calc(var(--section-gap) * -1);
+  /* Bù khoảng trắng bên trái */
+}
+
+/* Main Article Styles */
+.mainArticle {
+  width: var(--main-article-width);
+  box-sizing: border-box;
+  padding-left: var(--section-gap);
+  /* Khoảng cách bên trái */
+}
+
+.mainArticleImage {
+  width: 100%;
+  height: var(--main-article-image-height);
+  object-fit: cover;
+  aspect-ratio: 1 / 1;
+  /* Hình vuông */
+}
+
+.mainArticle h3 {
+  font-size: var(--main-article-title-size);
+  margin: 5px 0;
+}
+
+.articleSummary {
+  font-size: 0.9em;
+  color: #555;
+  margin-top: 5px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+
+  overflow: hidden;
+}
+
+.mainArticle .articleDivider {
+  /* Đường kẻ giữa title và summary */
+  border-bottom: 1px dashed #ccc;
+  margin: 10px 0;
+}
+
+/* Middle Articles Styles */
+.middleArticles {
+  width: var(--middle-articles-width);
+  box-sizing: border-box;
+  padding-left: var(--section-gap);
+  /* Khoảng cách bên trái */
+}
+
+.middleArticle {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.middleArticleImage {
+  width: 100%;
+  height: var(--middle-article-image-height);
+  object-fit: cover;
+  aspect-ratio: 4 / 3;
+}
+
+.middleArticle h3 {
+  font-size: var(--middle-article-title-size);
+  margin: 5px 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  /* Giới hạn 3 dòng */
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-align: justify;
+  /* Căn đều */
+  text-align-last: left;
+  /* Dòng cuối cùng căn trái */
+
+  /* Thêm thuộc tính tiêu chuẩn */
+}
+
+/* Side Articles Styles */
+.sideArticles {
+  width: var(--side-articles-width);
+  box-sizing: border-box;
+  padding-left: var(--section-gap);
+  /* Khoảng cách bên trái */
+}
+
+.sideArticle {
+  display: grid;
+  /* Sử dụng CSS Grid */
+  grid-template-columns: 40% 60%;
+  /* Điều chỉnh tỉ lệ (hình:chữ) */
+  gap: 5px;
+  /* Khoảng cách giữa hình và chữ */
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px dashed #ccc;
+  /* Đường gạch ngang */
+  align-items: start;
+  /* Căn chữ lên trên */
+}
+
+
+/* Loại bỏ đường gạch ngang ở bài viết cuối cùng */
+.sideArticle:last-child {
+  border-bottom: none;
+}
+
+.sideArticle h3 {
+  font-size: var(--side-article-title-size);
+  margin: 5px 0;
+  margin-inline: 10px 15px;
+  /* Lề trái 10px, lề phải 15px */
+  text-align: justify;
+  /* Căn đều */
+  text-align-last: left;
+  /* Dòng cuối cùng căn trái */
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  /* Giới hạn 2 dòng */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  line-clamp: 3;
+  /* Thêm thuộc tính tiêu chuẩn */
+}
+
+.sideArticleImage {
+  width: 100%;
+  /* Tăng chiều ngang hình ảnh */
+  height: auto;
+  object-fit: cover;
+  aspect-ratio: 3/2;
+  margin-right: 10px;
+}
+
+/* Ẩn vùng content phụ trên màn hình nhỏ */
+@media (max-width: 768px) {
+  .sideArticles {
+    display: none;
+  }
+
+  .mainArticle {
+    width: 100%;
+    padding-left: 0;
+  }
+
+  .middleArticles {
+    width: 100%;
+    padding-left: 0;
+  }
+}
+
+/* Common Styles */
+h3 {
+  font-size: 1em;
+  margin: 5px 0;
+}
+
+.viewMoreButton {
+  display: block;
+  margin-left: 25px;
+  text-align: center;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 0px;
+}
+
+/* Hiệu ứng hover */
+.articleLink {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.2s ease;
+  /* Thêm hiệu ứng chuyển đổi */
+}
+
+.articleLink:hover {
+  color: rgb(54, 84, 238);
+  /* Màu đỏ khi hover title */
+}
+
+.articleLink img {
+  transition: opacity 0.2s ease;
+}
+
+.articleLink:hover img {
+  opacity: 0.8;
+  /* Hiệu ứng sáng nhẹ khi hover ảnh */
+}

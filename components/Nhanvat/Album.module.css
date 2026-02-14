@@ -1,0 +1,109 @@
+/* src/components/Nhanvat/Album.module.css */
+
+/* HEADER */
+.albumHeader {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+  position: relative;
+  min-height: 30px;
+}
+
+/* pseudo-element tạo “khe” 2px che lấp background cha */
+.albumHeader::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;    /* ngay dưới header */
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: transparent;
+  pointer-events: none;
+}
+
+.albumTitle {
+  font-size: 1.2em;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 10px;
+}
+
+.albumNavButtons {
+  display: flex;
+  gap: 0;
+}
+
+.albumNavBtn {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #fff;
+  font-size: 1.2rem;
+  transition: background 0.2s;
+}
+.albumNavBtn:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.albumNavBtn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+/* CAROUSEL LAYOUT (giữ nguyên) */
+.albumThumbnailContainer {
+  width: 100%;
+  display: grid;
+  grid-template-rows: 2fr 1fr;
+  gap: 8px;
+  box-sizing: border-box;
+  z-index: 0;
+}
+
+.albumBigImage {
+  position: relative;
+  width: 100%;
+  overflow: visible;
+}
+
+.albumThumbRow {
+  display: flex;
+  gap: 8px;
+}
+
+.albumThumbItem {
+  flex: 1;
+  position: relative;
+  aspect-ratio: 1 / 1;
+  overflow: visible;
+}
+
+.albumImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: transform 0.3s ease;
+}
+.albumImage:hover {
+  transform: scale(1.05);
+}
+
+.albumPlaceholder {
+  background-color: rgba(255, 255, 255, 0.08);
+  border-radius: 6px;
+  pointer-events: none;
+}

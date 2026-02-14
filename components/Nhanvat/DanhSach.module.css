@@ -1,0 +1,186 @@
+/* src/components/Nhanvat/DanhSach.module.css */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&family=Merriweather&family=Open+Sans&family=Nunito&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap");
+
+.listBg::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(to bottom, #271159 0%, #812183 50%, #4e5b85 100%);
+  z-index: -2; /* dưới canvas galaxy */
+}
+
+/* Container chiếm 90% chiều ngang */
+.wrapper {
+  position: relative;
+  padding: 30px 16px;
+  width: 90%;
+  margin: 0 auto;
+  z-index: 1; /* nằm trên Galaxy */
+}
+
+.loading {
+  font-size: 1.2rem;
+  text-align: center;
+  margin-top: 50px;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+}
+
+.tabsSearchContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.categoryTabs {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.tabItem {
+  padding: 6px 12px;
+  margin-right: 8px;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 12px;
+  font-weight: 500;
+  color: #333;
+  font-size: 0.9rem;
+  font-family: "Poppins", sans-serif;
+  transition: background 0.3s;
+}
+.tabItem:hover {
+  background: rgba(115, 222, 255, 0.8);
+}
+.activeTab {
+  background: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.searchBox input {
+  width: 220px;
+  max-width: 90%;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 9999px;
+  font-size: 0.95rem;
+  outline: none;
+  background: rgba(255, 255, 255, 0.7);
+  color: #333;
+  font-family: "Poppins", sans-serif;
+}
+.searchBox input::placeholder {
+  color: #666;
+}
+
+/* Grid nhân vật */
+.characterGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(204px, 1fr));
+  gap: 26px;
+  align-items: start;
+}
+
+/* Card styling & sheen */
+.characterCard {
+  position: relative;
+  background: rgba(203, 212, 255, 0.17);
+  backdrop-filter: blur(10px);
+  border: 0.5px solid rgba(190, 237, 255, 0.317);
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0.8;
+  padding: 12px 12px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 0 30px 4px rgba(155, 66, 133, 0.589);
+}
+.characterCard::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgb(232, 246, 250) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: skewX(-25deg);
+  pointer-events: none;
+  z-index: 2;
+}
+.characterCard:hover {
+  transform: translateY(-16px) scale(1.01);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+}
+.characterCard:hover::after {
+  animation: sheen 0.8s ease-in-out forwards;
+}
+@keyframes sheen {
+  from {
+    left: -150%;
+  }
+  to {
+    left: 150%;
+  }
+}
+
+.avatarWrapper {
+  width: 90%;
+  padding-top: 90%;
+  position: relative;
+  margin-top: 0;
+  background: rgba(255, 255, 255, 0.205);
+  border-radius: 12px;
+  overflow: hidden;
+  
+}
+.avatarWrapper img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  box-shadow: #333;
+  border-radius: 12px;
+}
+
+.characterName {
+  width: 100%;
+  padding: 8px 0;
+  font-weight: 600;
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.1);
+
+
+  margin: 12px 0;
+  text-align: center;
+  color: #ffffff;
+  font-size: 1.4em;
+  font-family: "Nunito", sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 600px) {
+  .characterGrid {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 12px;
+  }
+}

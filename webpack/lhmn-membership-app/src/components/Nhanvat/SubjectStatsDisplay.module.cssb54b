@@ -1,0 +1,2 @@
+// extracted by mini-css-extract-plugin
+export default {"statsContainer":"SubjectStatsDisplay_statsContainer__gSz-J","statsList":"SubjectStatsDisplay_statsList__pYRBV","statRow":"SubjectStatsDisplay_statRow__UOnQw","statLabel":"SubjectStatsDisplay_statLabel__46UAF","statStars":"SubjectStatsDisplay_statStars__JoxEX","starFilled":"SubjectStatsDisplay_starFilled__n-UXw","starEmpty":"SubjectStatsDisplay_starEmpty__EprDh"};

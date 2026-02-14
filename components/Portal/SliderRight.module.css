@@ -1,0 +1,17 @@
+/* src/components/Portal/SliderRight.module.css */
+
+.sliderRight {
+    width: 200px;
+    height: 500px;
+    /* Chiều cao cố định */
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+
+/* Ẩn slider trên màn hình nhỏ */
+@media (max-width: 768px) {
+    .sliderRight {
+        display: none;
+    }
+}

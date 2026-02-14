@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Merriweather&family=Open+Sans&family=Nunito&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+
+/* Overlay */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* Modal Box */
+.modalBox {
+  background: #fff;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 1000px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Modal Header */
+.modalBox h3 {
+  margin: 0;
+  padding: 16px;
+  font-size: 1.25rem;
+  border-bottom: 1px solid #eee;
+}
+
+/* Body */
+.themeBody {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+}
+
+/* Preview Panel */
+.previewPanel {
+  flex: 1.5;
+  padding: 16px;
+  overflow: auto;
+}
+
+.previewContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  border: 1px dashed #999;
+  padding: 4px;
+  min-height: 150px;
+  position: relative;
+  font-family: inherit;
+}
+
+.section5 {
+  grid-column: 1 / -1;
+  min-height: 100px;
+}
+
+.previewPoster {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Sub-section boxes */
+.sub-avatarAndPeak,
+.sub-albumCarousel,
+.sub-featuredComics,
+.sub-sectionName,
+.sub-infoDescription,
+.sub-radarStats,
+.sub-subjectStats,
+.sub-mobileCarousel,
+.sub-quote,
+.sub-socialButtons,
+.sub-tabContent,
+.sub-inventory,
+.sub-friends {
+  width: 100%;
+  text-align: center;
+  padding: 4px 0;
+  border-radius: 2px;
+  font-family: inherit;
+}
+
+/* Controls Panel */
+.controlsPanel {
+  flex: 1;
+  padding: 16px;
+  border-left: 1px solid #eee;
+  overflow-y: auto;
+}
+
+.controlSection {
+  margin-bottom: 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 8px;
+}
+
+.controlSection legend {
+  padding: 0 4px;
+  font-weight: bold;
+}
+
+.controlItem {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.controlItem label {
+  width: 80px;
+  font-size: 0.875rem;
+}
+
+.controlItem input[type="color"] {
+  width: 50px;
+  height: 50px;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+}
+
+.controlItem select,
+.controlItem input[type="range"] {
+  flex: 1;
+  margin-left: 8px;
+  padding: 4px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Toggle-able Subsection */
+.controlSubsection summary {
+  cursor: pointer;
+  font-weight: bold;
+  list-style: none;
+  position: relative;
+  padding-left: 20px;
+}
+
+.controlSubsection summary::-webkit-details-marker {
+  display: none;
+}
+
+.controlSubsection summary::before {
+  content: "+";
+  position: absolute;
+  left: 0;
+}
+
+.controlSubsection[open] summary::before {
+  content: "–";
+}
+
+/* Button Group */
+.buttonGroup {
+  padding: 12px 16px;
+  border-top: 1px solid #eee;
+  text-align: right;
+  background: #fafafa;
+}
+
+.buttonGroup button {
+  padding: 8px 16px;
+  margin-left: 8px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.buttonGroup button:first-child {
+  background: #4caf50;
+  color: #fff;
+}
+
+.buttonGroup button:last-child {
+  background: #f44336;
+  color: #fff;
+}

@@ -1,0 +1,2 @@
+// extracted by mini-css-extract-plugin
+export default {"pcomicsContainer":"PComics_pcomicsContainer__l7a9X","pcomicsList":"PComics_pcomicsList__mV7pu","pcomicsItem":"PComics_pcomicsItem__RCk9X","comicLink":"PComics_comicLink__QRyOT","comicCover":"PComics_comicCover__l+yLK","comicTitle":"PComics_comicTitle__faRVh"};

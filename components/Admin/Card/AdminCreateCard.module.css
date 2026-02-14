@@ -1,0 +1,53 @@
+/* AdminCreateCard.module.css */
+.container {
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    max-width: 1000px;
+    margin: auto;
+  }
+  .title {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+  .formGroup {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  .formGroup label {
+    width: 200px;
+    font-weight: bold;
+  }
+  .formGroup select,
+  .formGroup input {
+    flex: 1;
+    padding: 6px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+  }
+  .skillCardsContainer {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  .skillCard {
+    flex: 1;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 6px;
+    background: white;
+  }
+  .skillCard label {
+    display: block;
+    font-weight: 500;
+    margin: 6px 0 2px;
+  }
+  .skillCard input,
+  .skillCard textarea {
+    width: 95%;
+    padding: 6px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  

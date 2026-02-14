@@ -1,0 +1,233 @@
+/* src/components/Comics/ChapterList.module.css */
+
+.chapterListView {
+  width: 90vw;
+  max-width: 1400px;
+  margin: 0px auto;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  padding: 16px;
+}
+
+.loading,
+.noComics {
+  text-align: center;
+  padding: 40px 0;
+  color: #888;
+  font-size: 1.2rem;
+}
+
+.chapterListContainer {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* LEFT: Danh sách chương */
+.listSection {
+  flex: 0 0 45%;
+  display: flex;
+  flex-direction: column;
+}
+
+.listHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  border-bottom: 1px solid #e0e0e0;
+  margin-bottom: 8px;
+}
+
+.listHeaderTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.listHeaderCount {
+  font-size: 0.9rem;
+  color: #555;
+  margin-left: 4px;
+}
+
+.sortButton {
+  background: none;
+  border: 1px solid #007bff;
+  border-radius: 4px;
+  padding: 4px 8px;
+  color: #007bff;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.sortButton:hover {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.listContainer {
+  flex: 1;
+  max-height: 900px;
+  overflow-y: auto;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+/* Scrollbar ẩn và chỉ hiện khi hover */
+.listContainer {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+}
+.listContainer::-webkit-scrollbar {
+  width: 0px; /* Chrome, Safari */
+  height: 0px;
+}
+.listContainer:hover::-webkit-scrollbar {
+  width: 6px;
+}
+.listContainer:hover::-webkit-scrollbar-thumb {
+  background-color: #bbb;
+  border-radius: 4px;
+}
+.listContainer:hover::-webkit-scrollbar-track {
+  background: transparent;
+}
+/* Scrollbar tuỳ chỉnh cho danh sách chương */
+
+.listItem {
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.listItem:last-child {
+  border-bottom: none;
+}
+
+.listLink {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  text-decoration: none;
+  color: #333;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.listLink:hover {
+  background-color: #007bff;
+  color: #fff;
+}
+.listLink:hover .freeText,
+.listLink:hover .premiumText {
+  color: #fff;
+}
+
+.listLink:hover .listStatus svg {
+  color: #fff;
+}
+
+.listTitle {
+  font-weight: 600;
+}
+
+.listStatus {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.freeText,
+.premiumText {
+  font-size: 0.85rem;
+}
+
+/* RIGHT: Wrapper tổng */
+.latestWrapper {
+  flex: 0 0 45%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.latestSection {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: nowrap;
+  width: 100%;
+}
+
+.latestBadge {
+  --background: linear-gradient(45deg, #ee227e, #f51f3c);
+  background: var(--background);
+  cursor: default;
+  font-size: 1.3rem;
+  padding: 4px 8px;
+  border-radius: 4px;
+  color: #fff;
+  font-weight: 600;
+  flex-shrink: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+.latestLink {
+  text-decoration: none;
+  color: inherit;
+}
+
+.latestTitle {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  flex: 1;
+  min-width: 0;
+  white-space: wrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+/* Card chỉ bìa */
+.latestCard {
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.latestImage {
+  width: 100%;
+  object-fit: cover;
+}
+
+.purchasedText {
+  margin-left: 6px;
+  color: #28a745; /* Màu xanh lá cây */
+  font-weight: bold;
+}
+
+
+@media (max-width: 768px) {
+  .chapterListContainer {
+    flex-direction: column;
+  }
+
+  .listSection,
+  .latestWrapper {
+    flex: 1 1 100%;
+  }
+
+  .latestBadge,
+  .latestTitle {
+    max-width: 90vw;
+  }
+}

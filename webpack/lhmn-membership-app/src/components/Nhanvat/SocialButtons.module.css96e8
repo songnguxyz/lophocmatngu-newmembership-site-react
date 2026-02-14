@@ -1,0 +1,2 @@
+// extracted by mini-css-extract-plugin
+export default {"socialButtons":"SocialButtons_socialButtons__o-FMp","buttonWrapper":"SocialButtons_buttonWrapper__MnuZg","leftEdge":"SocialButtons_leftEdge__uHAPk","button":"SocialButtons_button__Cv11v","textButton":"SocialButtons_textButton__cfXH1","active":"SocialButtons_active__FY7UK","favoriteButton":"SocialButtons_favoriteButton__RtgMo","posterSection":"SocialButtons_posterSection__1yNac","socialButtonsOverlay":"SocialButtons_socialButtonsOverlay__pCzVu"};

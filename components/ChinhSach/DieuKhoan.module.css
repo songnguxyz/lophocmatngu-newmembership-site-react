@@ -1,0 +1,43 @@
+.container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #222;
+    line-height: 1.6;
+  }
+  
+  .title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    font-weight: 700;
+    color: #2c3e50;
+  }
+  
+  .section {
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .heading {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+    color: #34495e;
+  }
+  
+  p {
+    margin-bottom: 0.6rem;
+  }
+  
+  ul {
+    margin-left: 1.2rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  li {
+    margin-bottom: 0.4rem;
+  }
+  

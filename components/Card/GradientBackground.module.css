@@ -1,0 +1,20 @@
+.gradientBg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(-45deg, #3d2157, #221956);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+}
+
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}

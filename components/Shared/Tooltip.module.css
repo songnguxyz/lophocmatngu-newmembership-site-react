@@ -1,0 +1,54 @@
+.tooltipWrapper {
+  position: relative;
+  display: block;       /* block để chiếm hết khung con */
+  width: 100%;          /* đầy đủ chiều ngang của ảnh */
+  height: 100%;         /* đầy đủ chiều cao của ảnh */
+  overflow: visible;    /* cho phép tooltip tràn */
+  z-index: 100;         /* thấp hơn tooltipBubble */
+}
+
+.tooltipBubble {
+  display: block;
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  transform-origin: center bottom;
+
+  background: rgba(0, 0, 0, 1);
+  padding: 8px 12px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  line-height: 1.4;
+  color: #fff;
+  text-align: left;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  box-sizing: border-box;
+
+  max-width: min(240px, 90vw);
+  min-width: 120px;         /* đảm bảo đủ rộng */
+  white-space: normal;      /* wrap bình thường */
+  overflow-wrap: break-word;
+  word-break: normal;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  z-index: 1000;            /* nổi trên hết */
+}
+
+.tooltipBubble.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.bubbleArrow {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 6px;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 1) transparent transparent transparent;
+  z-index: 1000;
+}

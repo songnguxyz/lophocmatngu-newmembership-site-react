@@ -1,0 +1,34 @@
+:global(.descriptionBlock) {
+    margin: 16px 0;
+  }
+  
+
+
+  .descriptionBlock {
+    flex: 1;
+    padding: 0;
+    margin: 0;
+    border-radius: 8px;
+    /* Trả về normal để dùng margin của <p> */
+    white-space: normal;
+    font-size: 0.95rem;
+    /* Bạn có thể giảm nhẹ line-height nếu muốn */
+    line-height: 1.4;      
+    text-align: left;
+    word-break: break-word;
+  }
+  
+  /* Giảm margin bottom của <p> cho gần nhau hơn */
+  .descriptionBlock p {
+    margin: 0 0 0.1em;  /* trước đây mặc định có thể là 1em */
+  }
+  
+  /* Cũng đảm bảo <br> không tạo quá nhiều khoảng trắng */
+  .descriptionBlock br {
+    display: block;
+    content: "";
+    margin: 0;           /* xóa margin mặc định */
+    line-height: 0.5;    /* dòng gọn hơn */
+  }
+  
+  

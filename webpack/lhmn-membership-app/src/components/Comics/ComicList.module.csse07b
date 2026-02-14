@@ -1,0 +1,2 @@
+// extracted by mini-css-extract-plugin
+export default {"listContainer":"ComicList_listContainer__PFfzZ","categorySection":"ComicList_categorySection__Dhjc5","categoryTitle":"ComicList_categoryTitle__HuU6t","grid":"ComicList_grid__+VK8P","card":"ComicList_card__H4CTt","cover":"ComicList_cover__PCBUQ","info":"ComicList_info__6DYNQ","noCategories":"ComicList_noCategories__hXOjY"};

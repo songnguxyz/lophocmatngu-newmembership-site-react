@@ -1,0 +1,280 @@
+/* NhanVatDetails.module.css */
+
+.fullscreenWrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+  background: transparent;
+  overflow-x: visible ;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  box-sizing: border-box;
+  overflow: visible ;
+}
+
+/* Section chính */
+.section1,
+.section2,
+.section3,
+.section4,
+.section5 {
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 12px;;
+}
+
+/* 1) Giữ padding & border-radius cho mọi sub-section */
+.section1 > *,
+.section2 > *,
+.section3 > *,
+.section4 > *,
+.section5 > * {
+  /* Giữ padding gốc của sub-section, nếu cần tăng: */
+  padding: 8px 8px;
+  /* Giữ bo góc */
+  border-radius: 8px;
+}
+
+.section1 {
+  z-index: 1;
+}
+/* Section2 – Name */
+.sectionName {
+  display: block;
+  padding: 4px 0;
+  margin-bottom: 6px;
+  border-radius: 8px;
+  font-size: 1.6em;
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  line-height: 1.2;
+}
+.sectionName h2 {
+  margin: 0;
+  padding: 0;
+  line-height: 1.2;
+}
+
+.section3 {
+  position: relative;
+  height: 720px;
+  overflow: visible !important;
+  transform: translate(-25px,40px);
+}
+.section3 > * {
+  overflow: visible !important;
+}
+
+/* Section4 – Quote + Social + Content + Inventory */
+.section4 {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding-top: 12px;
+  gap: 16px;
+}
+
+.sectionQuote {
+  position: relative;
+  left: -80px;
+  z-index: 3;
+  margin: 6px auto 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 1.3em;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  word-break: break-word;
+  padding: 1em;
+  border-radius: 18px;
+  background-color: var(--bg, transparent);
+  color: inherit;
+}
+.sectionQuote::after {
+  content: "";
+  position: absolute;
+  bottom: -22px;
+  left: 60px;
+  width: 0;
+  height: 0;
+  border-left: 16px solid transparent;
+  border-right: 16px solid transparent;
+  border-top: 50px solid var(--bg);
+  transform-origin: left top;
+  transform: rotate(25deg);
+  z-index: -1;
+}
+
+.sectionSocialButton {
+  margin-top: 0px;
+  z-index: 20;
+}
+
+.sectionContentTab {
+  margin-top: 0px;
+}
+
+.sectionInventory {
+  margin-top: 0px;
+}
+
+/* Section5 – FriendList */
+.section5 {
+  margin-top: -65px;
+  position: relative;
+  z-index: 20;
+  border-radius: 12px;
+  margin: 0;
+  padding: 0px 0px;
+}
+
+
+.section5 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 12px;
+}
+
+/* messenger for guest*/
+.comicAccessMessage {
+  background-color: rgba(255, 224, 224, 0.9);
+  color: #a94442;
+  padding: 12px 16px;
+  margin: 16px 0;
+  border: 1px solid #f5c6cb;
+  border-radius: 6px;
+  text-align: center;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.comicAccessMessage a {
+  color: #007bff;
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+.comicAccessMessage a:hover {
+  color: #0056b3;
+}
+
+
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .section1,
+  .section2,
+  .section3,
+  .section4,
+  .section5 {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .sectionRadarStat,
+  .sectionSubjectStat,
+  .sectionAlbum,
+  .sectionComic {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 16px 16px !important;
+    border-radius: 16px;
+    box-sizing: border-box;
+  }
+
+  .sectionName {
+    font-size: 1.2em;
+  }
+
+  .sectionQuote {
+    left: 0;
+    margin: 6px auto;
+    text-align: center;
+  }
+  .sectionQuote::after {
+    display: none;
+  }
+
+  .sectionSocialButton,
+  .sectionContentTab,
+  .sectionInventory {
+    margin-top: 12px;
+  }
+  .sectionInventory {
+    margin-top: 0;
+  }
+
+  .section3 {
+    position: static;
+    height: auto;
+    transform: translate(0, 0);
+  }
+  .section5 {
+    margin-top: 0;
+  }
+}
+
+/* ===== DESKTOP ===== */
+@media (min-width: 769px) {
+  .container {
+    display: grid;
+    grid-template-columns: 334px 334px 607px 300px;
+    grid-template-rows: auto auto;
+    gap: 10px;
+    justify-content: center;
+    padding: 12px;
+    box-sizing: border-box;
+    align-items: start;
+    overflow: visible;
+  }
+  .section1 {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .section2 {
+    grid-column: 2;
+    grid-row: 1;
+  }
+  .section3 {
+    grid-column: 3;
+    grid-row: 1;
+  }
+  .section4 {
+    grid-column: 4;
+    grid-row: 1;
+  }
+  .section5 {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+
+  /* reset margin/padding các section con */
+  .section1 > *,
+  .section2 > *,
+  .section4 > * {
+    margin: 6px 0;
+    width: auto;
+  }
+}

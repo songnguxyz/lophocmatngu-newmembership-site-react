@@ -1,0 +1,35 @@
+/*src/components/Admin/Common/PaginationStyle.css*/
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.page-btn {
+  padding: 8px 12px;
+  border: 1px solid #007bff;
+  background: white;
+  color: #007bff;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-weight: bold;
+}
+
+.page-btn:hover {
+  background: #007bff;
+  color: white;
+}
+
+.page-btn.active {
+  background: #007bff;
+  color: white;
+  font-weight: bold;
+}
+
+.page-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

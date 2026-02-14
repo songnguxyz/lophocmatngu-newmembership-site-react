@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+* {
+  font-family: 'Inter', sans-serif;
+}
+
+.navigationBar {
+  width: 100%;
+  background: #222;
+  color: white;
+  position: relative;
+  z-index: 1000;
+}
+
+.navWrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 12px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.logo {
+  font-size: 1.5rem;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.menuIcon {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+  z-index: 1002;
+}
+
+.mobileMenu {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.navList {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.linkBtn {
+  background: none;
+  border: none;
+  color: white;
+  font: inherit;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 8px 0;
+  position: relative;
+  transition: color 0.3s ease, transform 0.2s ease;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.linkBtn::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0%;
+  height: 2px;
+  background-color: #00aced;
+  transition: width 0.3s ease, left 0.3s ease;
+}
+
+.linkBtn:hover {
+  color: #00aced;
+  transform: translateY(-1px);
+}
+
+.linkBtn:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+.userRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+}
+
+.userGreeting {
+  color: #ddd;
+  font-size: 0.95rem;
+}
+
+.userName {
+  color: lightblue;
+  font-weight: bold;
+  margin-left: 4px;
+}
+
+.logoutButton {
+  background: none;
+  border: none;
+  color: lightcoral;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 0;
+  font-size: 0.95rem;
+  white-space: nowrap;
+  transition: color 0.3s ease;
+}
+
+.logoutButton:hover {
+  color: white;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.5);
+  z-index: 1000;
+}
+
+@media (max-width: 768px) {
+  .menuIcon {
+    display: block;
+  }
+
+  .mobileMenu {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 260px;
+    height: 100vh;
+    background: #333;
+    flex-direction: column;
+    padding: 60px 20px;
+    transition: left 0.3s ease;
+    z-index: 1001;
+    overflow-y: auto;
+  }
+
+  .mobileMenu.open {
+    left: 0;
+  }
+
+  .navList {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .userRow {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+}

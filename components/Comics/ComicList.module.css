@@ -1,0 +1,116 @@
+/* src/components/Comics/ComicList.module.css */
+
+/* Container tổng cho tất cả các category */
+.listContainer {
+  width: 90vw;               /* Desktop: chiếm 90% chiều ngang */
+  max-width: 1600px;
+  margin: 0px auto;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  box-sizing: border-box;
+}
+
+/* Section mỗi category, có gạch chân ngăn cách */
+.categorySection {
+  margin-bottom: 40px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+/* Tiêu đề category */
+.categoryTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: #333;
+}
+
+/* Grid cho list comic */
+.grid {
+  display: grid;
+  gap: 24px;
+  /* Desktop: mỗi card rộng gấp 1.5 lần ban đầu (160px→240px) */
+  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+  align-items: start;
+}
+
+/* Card truyện */
+.card {
+  background: #ffffff;
+  border: 1px solid #eee;
+  border-radius: 6px;
+  overflow: hidden;
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Ảnh bìa trong card (kéo lớn theo card) */
+.cover img {
+  width: 100%;
+  aspect-ratio: 15/22;
+  object-fit: cover;
+  display: block;
+}
+
+/* Phần thông tin title */
+.info {
+  padding: 16px 12px;
+  text-align: center;
+}
+
+.info h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #333;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: color 0.2s ease;
+}
+
+.card:hover .info h3 {
+  color: #007bff;
+}
+
+/* Khi chưa có category nào */
+.noCategories {
+  text-align: center;
+  padding: 40px 0;
+  color: #888;
+  font-size: 1.2rem;
+}
+
+/* —— Responsive cho mobile —— */
+@media (max-width: 768px) {
+  .listContainer {
+    width: 100%;           /* Mobile: chiếm trọn */
+    padding: 12px;
+  }
+
+  .categorySection {
+    margin-bottom: 32px;
+    padding-bottom: 16px;
+  }
+
+  .grid {
+    gap: 16px;
+    /* Mobile: trả về kích thước card gốc (160px) */
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  }
+
+  .info {
+    padding: 12px 8px;
+  }
+
+  .info h3 {
+    font-size: 1rem;
+  }
+}

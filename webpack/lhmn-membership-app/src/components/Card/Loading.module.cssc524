@@ -1,0 +1,2 @@
+// extracted by mini-css-extract-plugin
+export default {"fullScreen":"Loading_fullScreen__FiNxC","loader":"Loading_loader__ARrIb","spinOrb":"Loading_spinOrb__Bjkm9","loadingText":"Loading_loadingText__xDPJs","shimmerText":"Loading_shimmerText__wtUBL"};

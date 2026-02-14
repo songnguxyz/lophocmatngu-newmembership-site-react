@@ -1,0 +1,15 @@
+/* src/components/Admin/ShopProductManager.css */
+input,
+select,
+button {
+    margin: 5px;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+button {
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+}
